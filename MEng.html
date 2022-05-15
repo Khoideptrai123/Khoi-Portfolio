@@ -1,0 +1,173 @@
+<!--file:///Users/katherinepaseman/dropbox%20(mit)/Kat%20Portfolio/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+img {
+    height: auto;
+    max-width: 100%;
+}
+#banner {
+  height: auto;
+  max-width: 100%; 
+  position: relative;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+#feature {
+  height: auto;
+  max-width: 100%; 
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.best-font-size{
+  font-size: 18px;
+}
+</style>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../Kat Portfolio/favicon.ico">-->
+    <link rel = "icon" href = "favicon.ico">
+
+    <title>Stalkers Detector (CEC 2022)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/header.css" rel="stylesheet">
+
+    <!-- custom column for this template -->
+    <link href="./css/column.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+
+  <body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+          </button>
+          <a class="navbar-brand" href="index.html">Khoi Nguyen</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Projects</a></li>
+            <li><a href="info_me.html">About Me</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+<!--<div class="column">
+
+          <br> <br> <br>
+<img class="img-responsive" src="./pictures/tank.png" alt="" style="margin:40px -25px">         
+ </div> --> 
+        
+
+        <!--<div class="column"> -->
+          <br> <br> <br>
+              <div class="header">
+                  <h1 style="margin:50px 0px"> Anti-stalking device with thermal camera using computer vision (CEC 2022)</h1>
+                <font size "1">Spring '22</font>
+                  
+                  <p class="lead"> <font color=#000000> technical skills: </font> <font color=#7F7E7E> Electronics Design, Machine Learning, Mechanical Engineering</font><br>
+				  <p class = "best-font-size">
+            Canadian Engineer Competition (CEC) is an annual competition held by Canadian Federation of Engineer Student. 
+            It brings together over 200 of the most innovative and creative engineering undergraduate students from across Canada to compete against each other in eight categories (Junior Design, Senior Design, Innovative Design, Engineering Consulting, Parliamentary Debate, Re-engineering, Programming, and Engineering Communication). <br>
+            <img class="img-responsive center" src="./Khoi Picture/CEC/CEC2ndplace.PNG">
+          </p>
+          <p class = "best-font-size"> 
+            The concept for the design is simple: we capture sensors inputs from the thermal camera, then perform object detection on the captured imagery with machine learning, and if suspicious activities are detected, alert the user via the app.For the sensor inputs, the device uses a thermal-camera and an ultrasonic sensor.
+             Object detection is performed using a TinyML algorithm, and the forms of notifications for suspicious activities include phone vibrations, ringtones, and popup windows. The picture below also showed our prototype that use for gathering our own data as well. One thing is that we use an Arduino Portenta for the prototype instead of Arduino 33BLE in our actual model due to out of stock at that time. 
+             <img class="img-responsive center" src="./Khoi Picture/CEC/DesignConcept.PNG">
+            </p>
+          <p class = "best-font-size">
+            I worked on designing the electrical system of the project as well as developing the workflow for the firmware. 
+            This involved sourcing required electronics (camera, MCU, other sensors,) to make sure we got optimal parts at minimum budget (we only receive $300 after winning 1st prize in WEC – regional competion before CEC). 
+            <img class="img-responsive center" src="./Khoi Picture/CEC/ESystem.PNG">
+          </p>
+          <p class = "best-font-size">
+            Beside the electrical aspect, I also work on building the ML system. Our project utilized TinyML from Edge Impulse which is a ML framework for microcontroller-based system.
+            For the camera picture, the camera gave an matrix of 24x32 pixels but we translate from 2D to 1D array. This provided less computationally intensive than convetional option, which require less-preprocessing for our system. 
+            This feature would save us from the cost as we do not have to upgrade our controller to train the ML algorithm effectively. 
+            <img class="img-responsive center" src="./Khoi Picture/CEC/trainingML.PNG" >
+          </p>
+          Our ML model use a Neural Network as follow. This model architecture was chosen because it performed best amongst other model variations at predicting the test set. 
+          The input is the 1D thermal array then goes through three different dense layers 80, 40, then 20 neurons respectively. Dense layers mean that all the different neurons are fully connected. 
+          Training accuracy is 75.7% which represents the fraction that the predictions of the model got right. These are also the training model’s on-device performance.
+          <img class="img-responsive center" src="./Khoi Picture/CEC/MLmodel.PNG" >
+          <p class = "best-font-size">
+            Upon testing it on the test dataset, we received 70% accuracy in general with the confusion matrix as follow. 
+            “Human” means that our model “see” that there is a person approaching where as “Background” means no human.
+            <img class="img-responsive center" src="./Khoi Picture/CEC/MLresult.PNG">
+				  </p>
+
+<br> <br>
+                 </p>
+
+                  </div>
+
+                  </div>
+
+             </div>
+
+
+</div>
+
+</div>
+
+
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
