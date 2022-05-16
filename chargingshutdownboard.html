@@ -35,7 +35,7 @@ img {
     <!--<link rel="icon" href="../Kat Portfolio/favicon.ico">-->
     <link rel = "icon" href = "favicon.ico">
 
-    <title>Charging Shutdown Board</title>
+    <title> Virtual Oscillscope using LabView</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -72,12 +72,13 @@ img {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Rod Bayliss III</a>
+          <a class="navbar-brand" href="index.html">Khoi Nguyen</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="./index.html">Projects</a></li>
             <li><a href="info_me.html">About Me</a></li>
+            <li><a href="references.html">Experiences</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -88,32 +89,29 @@ img {
 <div class="column">
 
           <br> <br> <br>
-<img class="img-responsive" src="./pictures/CSB_2D.JPG" alt="Charging Shutdown Board Layout" style="margin:40px -25px"  >         
+<img class="img-responsive" src="./Khoi Picture/MSE 310/Oscilloscope_back.PNG" alt="Charging Shutdown Board Layout" style="margin:40px -25px"  >         
  </div>
         
 
         <div class="column">
           <br> <br> <br>
               <div class="header">
-                  <h1 style="margin:40px 0px">Charging Shutdown Board </h1>
-                <font size "1"> fall '17 </font>
+                  <h1 style="margin:40px 0px">Virtual Oscillscope using LabView </h1>
+                <font size "1"> fall '20 </font>
                     
-                  <p class="lead"> <font color=#000000> technical skills: </font> <font color=#7F7E7E> Altium, HV electronics safety </font><br>
+                  <p class="lead"> <font color=#000000> technical skills: </font> <font color=#7F7E7E> LabView, Signal </font><br>
                   <font color=#000000>soft skills: </font><font color=#7F7E7E>iterative design review, team coordination </font></p>
 
                 <p > 
-                  Since summer of 2017, my main commitment has been building an electric racecar with MIT’s FSAE Electric Racecar Team. I love being a part of MIT FSAE because everyone is driven by a clear goal: making our car run as fast as possible. Being part of a team that is characterized by this dedication to quality drives me and every member to be the best engineer possible. 
+                  An oscilloscope is one of the most useful diagnostic tools in the design, and maintenance of electronic, and electromechanical systems. 
+                  In this project, I have built a virtual oscilloscope using LabView with a few basic time and frequency domain features.
 
 <br> <br>
-                  This semester I've been working on the charging shutdown board. At a high level, this board determines whether or not our car is safe to charge. The previous board reflected a somewhat clumsy and esoteric solution to this problem. It featured a binary signal that determined safety and then charged our car using a pre-set charging profile. This process was so poorly documented and non-intuitive that only three people on the team knew how to use it.  
+                  The scope features reading from either .csv, .wav or even direct audio input from the PC. Then it will display relevant time-domain features of the signal
+                  such as amplitude, RMS value, frequency. It also provided horizontal/vertical cursors for measuring different points.
 
 <br> <br>
-                  I made several improvements. 
-                  First, I added a microcontroller to process the Battery Management System outputs. This lets us determine how much power we want our charger to output based on how charged the battery is and to compile more data about our battery and charging characteristics. 
-                Second, I enabled a customizable charging profile. By sending CAN messages with detailed charging data instead of a binary signal, we’re able to change our charging profile based on factors such as how quickly we want to charge our system or the available power supply of our charger. 
-
-<br> <br>
-                  Ultimately, I took a board that was necessary for our car to function and made it a feature that allows our battery to be managed as flexibly and efficiently as possible. 
+                 Beside, the scope also have Frequency Domain feature by showing Fourier Fast Transfrom (FFT) of the signal. Then 3 filters are added for users to control: Low Pass Filter, High Pass Filter and Moving Average Filter
 </p>
 
                   </div>

@@ -96,16 +96,18 @@ img {
         <div class="column">
           <br> <br> <br>
               <div class="header">
-                  <h1 style="margin:40px 0px">Battery Management System Head Unit </h1>
+                  <h1 style="margin:40px 0px"> FSAE Dashboard (2019) </h1>
                 <font size "1"> fall '18-spring '19 </font>
                     
                   <p class="lead"> <font color=#000000> technical skills: </font> <font color=#7F7E7E> Altium, HV electronics</font><br>
                   <font color=#000000>soft skills: </font><font color=#7F7E7E>iterative design review, team coordination </font></p>
 
                 <p> 
-				For the 2019 FSAE car I worked on the BMS head unit. Its role is to monitor all cell voltages and thermistor temperatures when powered. After receiving this information through an isolated communication protocol (LT's ISOSPI), it reports the minimum cell voltage and maximum thermistor temperature over CAN. Additionally there is an SD card on the chip to log every cell voltage and thermistor, enabling a data based thermal design to improve the battery's performance. 
+				For the 2019 FSAE car I worked on the Dashboard. to provide the driver with critical information, such as battery state of charge, and the rest of the team with the state of the system for debugging and maintenance of the battery. The unit was completed in 2 to 3 months during an active school year in 2019. 
+        The dashboard display features 2x 7 segments for displaying speed, two LED bar graphs to display battery state of charge and power, a piezo buzzer, and with an integrated SD card for saving information about the battery. In addition, three fault LEDS are connected to the dashboard for displaying BMS, IMD and extra general faults if needed. The board also interfaces via the vehicle CAN bus to receive messages from Vehicle Control Unit (VCU). 
 				</p><p>
-				In addition to this main funtion the BMS head unit interfaces with other high voltage electronics like the contactors, monitors battery coolant flow rate, and the temperatures of various HV electronics.
+          The dashboard was designed based on the TM4C development board or TivaC. Initial development began with interfacing with the bar graphs on the bread board. One problem we have is the LED driver circuit (10 segment LEDS driver) is an LM3914, which requires analog signal to interface. Thus, a Digital to Analog converter (DAC) is required, and we use an MCP48FVB02, which is an 8-bit DAC dual channels that interfaces via SPI. 
+          Since FSAE is intended as an education opportunity, I wrote a SPI library for interfacing with that IC from scratch. 
 				</p>
 
                   </div>
