@@ -1,0 +1,178 @@
+<!--file:///Users/katherinepaseman/dropbox%20(mit)/Kat%20Portfolio/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+img {
+    height: auto;
+    max-width: 100%;
+}
+#banner {
+  height: auto;
+  max-width: 100%; 
+  position: relative;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+#feature {
+  height: auto;
+  max-width: 100%; 
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.best-font-size{
+  font-size: 18px;
+}
+</style>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../Kat Portfolio/favicon.ico">-->
+    <link rel = "icon" href = "favicon.ico">
+
+    <title>Stalkers Detector (CEC 2022)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/header.css" rel="stylesheet">
+
+    <!-- custom column for this template -->
+    <link href="./css/column.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+
+  <body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+          </button>
+          <a class="navbar-brand" href="index.html">Khoi Nguyen</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Projects</a></li>
+            <li><a href="info_me.html">About Me</a></li>
+            <li><a href="references.html">Experiences</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+<!--<div class="column">
+
+          <br> <br> <br>
+<img class="img-responsive" src="./pictures/tank.png" alt="" style="margin:40px -25px">         
+ </div> --> 
+        
+
+        <!--<div class="column"> -->
+          <br> <br> <br>
+              <div class="header">
+                  <h1 style="margin:50px 0px"> Throwing Ball Robot Arm Design</h1>
+                <font size "1">Summer '22</font>
+                  
+                  <p class="lead"> <font color=#000000> technical skills: </font> <font color=#7F7E7E> Arduino, Solidwork, FEA simulation, PID control, MATLAB, Simulink</font><br>
+				  <p class = "best-font-size">
+              The project requires us to design, build and integrate a simple robot arm to throw the ball to the required bin (ranging from 75-200cm) using a DC motor. There are three sections involved: mechanical, electrical and control aspects of this project.
+              For the mechanical design, our goal is to build minimize the weight of the space frame (robot arm) and moment of inertia while also maintaining stiff enough to withstand a 10N load. The length of the space frame is 20cm as required by the project requirements.
+              Thus, inspiring from the design of trusses, we come up with our own design and running through FEA to verify  <br>
+            <img class="img-responsive center" src="./Khoi Picture/MSE312/FEA_arm.PNG">
+            <img class="img-responsive center" src="./Khoi Picture/MSE312/arm_sw.PNG">
+          </p>
+
+          <p class = "best-font-size">
+            Then, after verified with our Solidwork model, we began to weld the arm. In addition to the space frame, we also designed and 3D-printed our own ball holder for better stability of the ball. 
+            <br>
+          <img class="img-responsive center" src="./Khoi Picture/MSE312/assembled_arm.PNG">
+        </p>
+
+          <p class = "best-font-size"> 
+            Moving on, after finished with the mechanical design, we start looking at the design of our own DC motor. For the motor controller, we used an H-bridge with a NAND gate to run the PWM and Direction of the motor. In addition, we use Arduino Mega 2560 to send PWM signal and GPIO to set the control. 
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/Hbride_NAND.png">
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/Schematic_MSE312_2022-11-19.png">  
+          </p>
+
+          <p class = "best-font-size">
+            The control of Arduino is then performed in Simulink using the Renesselaer Arduino Support Package (RASP). This makes tuning the PID control easily as it allows real-time tuning. There are 2 strategy for controlling the arm, position and velocity control but they do share one common principle:
+            launching the ball from certain angle and then reduce speed to create a huge negative acceleration, which in turn provide the required force for the ball to launch from the robot arm. However, one key different is that for throwing the ball, we want the arm to rotate at high speed for long range. Thus, positional control is excel at high accuracy while velocity control is better for high range <br>
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/motor_arduino.PNG">
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/pos_control.PNG">
+            In addition, our strategy to throw the ball is to use velocity control. First we will slowly move the arm to the desired starting angle. Then based on different distance from the test stand to the required bin, the arm will move at constant rotational specified
+            and stop at the desired launching angle. 
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/trajectory_cmd.PNG">
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/velo_control.PNG">
+          </p>
+
+          <p class = "best-font-size">
+            The motor control has been tested successfully within Simulink, and the implementation on the motor is verified. The performance before the PID implementation of the tuning and smoothing on motor control is not as desired, after having the PID, the PID can reduce the oscillation and achieve a more ideal outcome. However, the position control of the motor can be more precise, and tuning from PID is necessary, the angular velocity though has a better-tuned result compared to the position control. Thus we wish we can achieve a more stable output from the motor, as then the motor will be able to halt or spin in the direction we want more accurately.
+            <br>
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/MSE312_result.mp4">
+          </p>
+
+
+                  </div>
+
+                  </div>
+
+             </div>
+
+
+</div>
+
+</div>
+
+
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
