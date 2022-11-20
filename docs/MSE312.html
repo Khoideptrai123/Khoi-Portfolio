@@ -44,7 +44,7 @@ img {
     <!--<link rel="icon" href="../Kat Portfolio/favicon.ico">-->
     <link rel = "icon" href = "favicon.ico">
 
-    <title>Stalkers Detector (CEC 2022)</title>
+    <title>Throwing ball robot arm</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -115,14 +115,14 @@ img {
               The project requires us to design, build and integrate a simple robot arm to throw the ball to the required bin (ranging from 75-200cm) using a DC motor. There are three sections involved: mechanical, electrical and control aspects of this project.
               For the mechanical design, our goal is to build minimize the weight of the space frame (robot arm) and moment of inertia while also maintaining stiff enough to withstand a 10N load. The length of the space frame is 20cm as required by the project requirements.
               Thus, inspiring from the design of trusses, we come up with our own design and running through FEA to verify  <br>
-            <img class="img-responsive center" src="./Khoi Picture/MSE312/FEA_arm.PNG">
-            <img class="img-responsive center" src="./Khoi Picture/MSE312/arm_sw.PNG">
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/FEA_arm.png">
+            <img class="img-responsive center" src="./Khoi Picture/MSE 312/arm_sw.PNG">
           </p>
 
           <p class = "best-font-size">
             Then, after verified with our Solidwork model, we began to weld the arm. In addition to the space frame, we also designed and 3D-printed our own ball holder for better stability of the ball. 
             <br>
-          <img class="img-responsive center" src="./Khoi Picture/MSE312/assembled_arm.PNG">
+          <img class="img-responsive center" src="./Khoi Picture/MSE 312/assembled_arm.PNG">
         </p>
 
           <p class = "best-font-size"> 
@@ -145,7 +145,12 @@ img {
           <p class = "best-font-size">
             The motor control has been tested successfully within Simulink, and the implementation on the motor is verified. The performance before the PID implementation of the tuning and smoothing on motor control is not as desired, after having the PID, the PID can reduce the oscillation and achieve a more ideal outcome. However, the position control of the motor can be more precise, and tuning from PID is necessary, the angular velocity though has a better-tuned result compared to the position control. Thus we wish we can achieve a more stable output from the motor, as then the motor will be able to halt or spin in the direction we want more accurately.
             <br>
-            <img class="img-responsive center" src="./Khoi Picture/MSE 312/MSE312_result.mp4">
+            <video width="500px" height="500px"
+            controls="controls"/>
+             
+            <source src="./Khoi Picture/MSE 312/MSE312_result.mp4"
+                type="video/mp4">
+        </video>
           </p>
 
 
